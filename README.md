@@ -23,6 +23,7 @@ API para realizar o CRUD de tasks (tarefas).
   * completed_at - data de quando a task foi concluída. O valor inicial deve ser null
   * created_at - data de quando a task foi criada
   * updated_at - deve ser sempre alterado para a data de quando a task foi atualizada
+  
 * Rotas
 
   * POST - /tasks
