@@ -4,7 +4,6 @@ import { json } from './middlewares/json.js'
 
 
 const database = new Database()
-const tasks = []
 
 const server = http.createServer(async (req, res) => {
    const { method, url } = req
@@ -12,17 +11,20 @@ const server = http.createServer(async (req, res) => {
    await json(req,res)
 
    if (method === 'GET' && url === '/tasks') {
+      const tasks = database.select('tasks')
       return res.end(JSON.stringify(tasks))
    }
 
    if (method === 'POST' && url === '/tasks') {
       const {title, description} = req.body
-      tasks.push({
+      
+      const task = {
          id: 1,
          title,
          description
-      })      
-      console.log('tasks = ', tasks.length)
+      }
+      database.insert('tasks',task)
+
       return res.writeHead(201).end()
    }
    return res.writeHead(404).end()
