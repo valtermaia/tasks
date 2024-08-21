@@ -50,4 +50,11 @@ export class Database {
          this.#persist()
       }
    }
+
+   markCompletedTask(table,id,completedDate) {
+      const rowIndex = this.#database[table].findIndex(row => row.id === id)
+      this.#database[table][rowIndex]["completed_at"] = completedDate
+      this.#database[table][rowIndex]["updated_at"] = completedDate
+      this.#persist()
+   }
 }
