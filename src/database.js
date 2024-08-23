@@ -40,6 +40,8 @@ export class Database {
       if (rowIndex > -1) {
          this.#database[table].splice(rowIndex, 1)
          this.#persist()
+      } else {
+         throw 'Record with the specified identifier does not exist.' 
       }
    }
    
@@ -48,13 +50,20 @@ export class Database {
       if (rowIndex > -1) {
          this.#database[table][rowIndex] = {id, ...data}
          this.#persist()
+      } else {
+         throw 'Record with the specified identifier does not exist.' 
       }
    }
 
    markCompletedTask(table,id,completedDate) {
       const rowIndex = this.#database[table].findIndex(row => row.id === id)
-      this.#database[table][rowIndex]["completed_at"] = completedDate
-      this.#database[table][rowIndex]["updated_at"] = completedDate
-      this.#persist()
+      if (rowIndex > -1) {
+         this.#database[table][rowIndex]["completed_at"] = completedDate
+         this.#database[table][rowIndex]["updated_at"] = completedDate
+         this.#persist()
+      } else {
+         throw 'Record with the specified identifier does not exist.' 
+      }
    }
+   
 }
