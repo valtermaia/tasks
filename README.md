@@ -6,12 +6,12 @@ API para realizar o CRUD de tasks (tarefas).
 
 ## Requisitos
 
-* [ ] Criação de uma task
-* [ ] Listagem de todas as tasks
-* [ ] Atualização de uma task pelo id
-* [ ] Remover uma task pelo id
-* [ ] Marcar pelo id uma task como completa
-* [ ] Importação de tasks em massa por um arquivo CSV
+* [X] Criação de uma task
+* [X] Listagem de todas as tasks
+* [X] Atualização de uma task pelo id
+* [X] Remover uma task pelo id
+* [X] Marcar pelo id uma task como completa
+* [X] Importação de tasks em massa por um arquivo CSV
 
 ## Regras de negócio e rotas
 
@@ -23,7 +23,6 @@ API para realizar o CRUD de tasks (tarefas).
   * completed_at - data de quando a task foi concluída. O valor inicial deve ser null
   * created_at - data de quando a task foi criada
   * updated_at - deve ser sempre alterado para a data de quando a task foi atualizada
-  
 * Rotas
 
   * POST - /tasks
