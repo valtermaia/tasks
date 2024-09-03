@@ -32,9 +32,9 @@ API para realizar o CRUD de tasks (tarefas).
   * PATCH - /tasks/:id/complete
 * A importação do CSV será feita utilizando a lib **csv-parse** para iterar nas linhas do arquivo chamando a rota POST /tasks para cada linha lida
 * Formato do CSV:
-  title,description
-  Task 01,Descrição da Task 01
-  Task 02,Descrição da Task 02
-  Task 03,Descrição da Task 03
-  Task 04,Descrição da Task 04
-  Task 05,Descrição da Task 05
+   * title,description
+   * Task 01,Descrição da Task 01
+   * Task 02,Descrição da Task 02
+   * Task 03,Descrição da Task 03
+   * Task 04,Descrição da Task 04
+   * Task 05,Descrição da Task 05
